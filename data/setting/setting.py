@@ -106,45 +106,64 @@ def main():
         os.system("cls")
         main()
     if scelta == "4":
-        Write.Print(f"| {username} | >> Do you want to reset the tool? [1] Yes [2] No >> ", Colors.black_to_red)
-        scelta = input()
-        if scelta == "1":
-            Write.Print(f"| {username} | >> Resetting Tool..", Colors.black_to_red)
-            time.sleep(1.5)
-            os.system("cls")
-            os.remove(file_path)
-            os.rmdir(output_folder)
-            os.rmdir(input_folder)
-            os.rmdir(cache_folder)
+        Write.Print(f"| {username} | >> Insert your password to continue: ", Colors.black_to_red)
+        password = input()
+        if password == password:
+            Write.Print(f"| {username} | >> Do you want to reset the tool? [1] Yes [2] No >> ", Colors.black_to_red)
+            scelta = input()
+            if scelta == "1":
+                Write.Print(f"| {username} | >> Resetting Tool..", Colors.black_to_red)
+                time.sleep(1.5)
+                os.system("cls")
+                os.remove(file_path)
+                os.rmdir(output_folder)
+                os.rmdir(input_folder)
+                os.rmdir(cache_folder)
 
-            os.system("python data/setting/set.py")
-        if scelta == "2":
-            Write.Print(f"| {username} | >> Going Back..", Colors.black_to_red)
+                os.system("python data/setting/set.py")
+            if scelta == "2":
+                Write.Print(f"| {username} | >> Going Back..", Colors.black_to_red)
+                time.sleep(1.5)
+                os.system("cls")
+                main()
+        else:
+            Write.Print(f"| {username} | >> Wrong Password!", Colors.white_to_red)
             time.sleep(1.5)
             os.system("cls")
             main()
     if scelta == "5":
-        Write.Print(f"| {username} | >> Enter your new username: ", Colors.black_to_red)
-        new_username = input()
-        Write.Print(f"| {username} | >> Changing Username..", Colors.black_to_red)
-        time.sleep(1.5)
-        with open(file_path, "w") as file:
-            file.write(f"username={new_username}\npassword={password}")
-        Write.Print(f"| {username} | >> Username Changed!", Colors.white_to_green)
-        time.sleep(1.5)
-        os.system("cls")
-        main()
-    if scelta == "6":
-            Write.Print(f"| {username} | >> Enter your new password: ", Colors.black_to_red)
-            new_password = input()
-            Write.Print(f"| {username} | >> Changing Password..", Colors.black_to_red)
+        Write.Print(f"| {username} | >> Insert your password to continue: ", Colors.black_to_red)
+        password = input()
+        if password == password:
+            Write.Print(f"| {username} | >> Enter your new username: ", Colors.black_to_red)
+            new_username = input()
+            Write.Print(f"| {username} | >> Changing Username..", Colors.black_to_red)
             time.sleep(1.5)
             with open(file_path, "w") as file:
-                file.write(f"username={username}\npassword={new_password}")
-            Write.Print(f"| {username} | >> Password Changed!", Colors.white_to_green)
+                file.write(f"username={new_username}\npassword={password}")
+            Write.Print(f"| {username} | >> Username Changed!", Colors.white_to_green)
             time.sleep(1.5)
             os.system("cls")
             main()
+        else:
+            Write.Print(f"| {username} | >> Wrong Password!", Colors.white_to_red)
+            time.sleep(1.5)
+            os.system("cls")
+            main()
+    if scelta == "6":
+            Write.Print(f"| {username} | >> Insert your password to continue: ", Colors.black_to_red)
+            password = input()
+            if password == password:
+                Write.Print(f"| {username} | >> Enter your new password: ", Colors.black_to_red)
+                new_password = input()
+                Write.Print(f"| {username} | >> Changing Password..", Colors.black_to_red)
+                time.sleep(1.5)
+                with open(file_path, "w") as file:
+                    file.write(f"username={username}\npassword={new_password}")
+                Write.Print(f"| {username} | >> Password Changed!", Colors.white_to_green)
+                time.sleep(1.5)
+                os.system("cls")
+                main()
     if scelta == "7":
             Write.Print(f"| {username} | >> Exiting..", Colors.black_to_red)
             time.sleep(1.5)
