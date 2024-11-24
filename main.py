@@ -28,35 +28,36 @@ def get_local_commit():
 
 # Funzione per fare il pull se ci sono aggiornamenti
 def check_for_updates():
-    Write.Print("Verifica aggiornamenti...", Colors.black_to_red)
+    Write.Print("Checking Updates...", Colors.black_to_red)
     
     remote_commit = get_remote_commit()
     if remote_commit is None:
-        Write.Print("Impossibile verificare gli aggiornamenti.", Colors.red)
+        Write.Print("Impossible verify updtes!", Colors.red)
         return
     
     local_commit = get_local_commit()
     if local_commit is None:
-        Write.Print("Impossibile ottenere il commit locale.", Colors.red)
+        Write.Print("Impossible to get the commit.", Colors.red)
         return
 
     if remote_commit != local_commit:
-        Write.Print("Nuove modifiche rilevate. Aggiornamento in corso...", Colors.green)
+        Write.Print("\nNew Update found! Updating...", Colors.green)
         subprocess.run(['git', 'pull'])
-        Write.Print("Aggiornamento completato!", Colors.green)
+        Write.Print("\nUpdate Completed!", Colors.green)
     else:
-        Write.Print("Il repository è aggiornato.", Colors.green)
+        Write.Print("\nThe repostory is updated!", Colors.green)
 
 # Funzione per il titolo
 def print_title():
     Write.Print(r'''
-     _______  ___  ___ ___  _______    _______  _______  _______  ___     
-    |   _   ||   ||   Y   ||   _   |  |       ||   _   ||   _   ||   |    
-    |   1___||.  ||.      ||.  |   |  |.|   | ||.  |   ||.  |   ||.  |    
-    |____   ||.  ||. \_/  ||.  |   |  `-|.  |-'|.  |   ||.  |   ||.  |___ 
-    |:  1   ||:  ||:  |   ||:  1   |    |:  |  |:  1   ||:  1   ||:  1   |
-    |::.. . ||::.||::.|:. ||::.. . |    |::.|  |::.. . ||::.. . ||::.. . |
-    `-------'`---'`--- ---'`-------'    `---'  `-------'`-------'`-------'
+ _______  _______  ___      _______   ___ ___   ___ ___    _______  _______  _______  ___     
+|   _   ||   _   ||   |    |   _   | (   Y   ) |   Y   |  |       ||   _   ||   _   ||   |    
+|.  |___||.  1   ||.  |    |.  1   |  \  1  /  |   1   |  |.|   | ||.  |   ||.  |   ||.  |    
+|.  |   ||.  _   ||.  |___ |.  _   |  /  _  \   \_   _/   `-|.  |-'|.  |   ||.  |   ||.  |___ 
+|:  1   ||:  |   ||:  1   ||:  |   | /:  |   \   |:  |      |:  |  |:  1   ||:  1   ||:  1   |
+|::.. . ||::.|:. ||::.. . ||::.|:. |(::. |:.  )  |::.|      |::.|  |::.. . ||::.. . ||::.. . |
+`-------'`--- ---'`-------'`--- ---' `--- ---'   `---'      `---'  `-------'`-------'`-------'
+                                                                                              
     ''', Colors.black_to_red, interval=0.001)
 
 def print_menu():
@@ -132,3 +133,4 @@ if __name__ == "__main__":
         Write.Print("| System | >> Settings file not found. Launching setup...", Colors.red)
         os.system("python data/setting/set.py")
     main()
+
