@@ -87,38 +87,46 @@ def load_settings():
 def main_menu(settings):
     os.system("cls")
     """Main menu logic."""
-    username = settings.get("username", "User")
-    print_title()
-    print_menu()
-    Write.Print(f"| {username} | >> ", Colors.black_to_red)
-    choice = input().strip()
+    Write.Print(f"| {username} | >> Insert your password to continue: ", Colors.black_to_red)
+    password = input()
+    if password == settings["password"]:
 
-    if choice == "1":
-        Write.Print(f"| {username} | >> Loading Youtube Tools...", Colors.black_to_red)
-        time.sleep(1.5)
-        os.system("cls")
-        os.system("python data/youtube/youtube.py")
-    if choice == "2":
-        Write.Print(f"| {username} | >> This Function is PREMIUM.", Colors.black_to_red)
-        main_menu(settings)
-    if choice == "3":
-        Write.Print(f"| {username} | >> This Function is under maintance.", Colors.black_to_red)
-        main_menu(settings)
-    if choice == "4":
-        Write.Print(f"| {username} | >> This Function is under maintance.", Colors.black_to_red)
-        main_menu(settings)
-    elif choice == "5":
-        Write.Print(f"| {username} | >> Loading Settings...", Colors.black_to_red)
-        time.sleep(1.5)
-        os.system("cls")
-        os.system("python data/setting/setting.py")
-    elif choice == "u":
-        check_for_updates()  # Aggiungi il controllo aggiornamenti qui
-        main_menu(settings)
+        username = settings.get("username", "User")
+        print_title()
+        print_menu()
+        Write.Print(f"| {username} | >> ", Colors.black_to_red)
+        choice = input().strip()
+
+        if choice == "1":
+            Write.Print(f"| {username} | >> Loading Youtube Tools...", Colors.black_to_red)
+            time.sleep(1.5)
+            os.system("cls")
+            os.system("python data/youtube/youtube.py")
+        if choice == "2":
+            Write.Print(f"| {username} | >> This Function is PREMIUM.", Colors.black_to_red)
+            main_menu(settings)
+        if choice == "3":
+            Write.Print(f"| {username} | >> This Function is under maintance.", Colors.black_to_red)
+            main_menu(settings)
+        if choice == "4":
+            Write.Print(f"| {username} | >> This Function is under maintance.", Colors.black_to_red)
+            main_menu(settings)
+        elif choice == "5":
+            Write.Print(f"| {username} | >> Loading Settings...", Colors.black_to_red)
+            time.sleep(1.5)
+            os.system("cls")
+            os.system("python data/setting/setting.py")
+        elif choice == "u":
+            check_for_updates()  # Aggiungi il controllo aggiornamenti qui
+            main_menu(settings)
+        else:
+            Write.Print(f"| {username} | >> Invalid choice. Try again!", Colors.red)
+            time.sleep(1)
+            main_menu(settings)
     else:
-        Write.Print(f"| {username} | >> Invalid choice. Try again!", Colors.red)
+        Write.Print(f"| {username} | >> Wrong password. Try again!", Colors.red)
         time.sleep(1)
-        main_menu(settings)
+        main()
 
 def main():
     settings = load_settings()
@@ -133,4 +141,3 @@ if __name__ == "__main__":
         Write.Print("| System | >> Settings file not found. Launching setup...", Colors.red)
         os.system("python data/setting/set.py")
     main()
-
