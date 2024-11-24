@@ -45,7 +45,7 @@ def ask_password(username):
                 Write.Print("Loading...", Colors.black_to_red)
                 time.sleep(1.5)
                 os.system("cls")
-                Write.Print("Welcome to Simo Tool!", Colors.black_to_red)
+                Write.Print("Welcome to Galaxy Tool!", Colors.black_to_red)
                 time.sleep(1.5)
                 os.system("cls")
                 os.system("python main.py")
