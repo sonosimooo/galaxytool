@@ -2,31 +2,26 @@
 
 A multifunctional and simple tool.
 
-![Immagine del progetto o screenshot](URL_dell'immagine)
+!(image.png)
 
 ## Indice
 
-1. [Descrizione](#descrizione)
-2. [Installazione](#installazione)
-3. [Uso](#uso)
-4. [Contribuire](#contribuire)
-5. [Licenza](#licenza)
+1. [Description](#description)
+2. [Installation](#installazione)
+3. [Use](#uso)
+4. [Licence](#licenza)
 
-## Descrizione
+## Description
 
-Descrizione dettagliata del progetto, cosa risolve o cosa fa. Includi qualsiasi contesto utile, come il problema che il progetto intende risolvere o la sua motivazione.
+A multifunctional and simple tool.
 
-## Installazione
+## Installation
 
-Istruzioni passo-passo su come installare e configurare il progetto sul proprio sistema. Includi anche i prerequisiti, se ce ne sono.
+   bash:
+   git clone https://github.com/sonosimooo/galaxytool.git
+
 
 ### Prerequisiti
 
-- Python 3.x
-- Librerie necessarie (specifica se sono necessarie librerie esterne, ad esempio `requests`, `pystyle`, ecc.)
+- Python 3.10+
 
-### Passi di installazione
-
-1. Clona il repository:
-   ```bash
-   git clone https://github.com/sonosimooo/galaxytool.git
