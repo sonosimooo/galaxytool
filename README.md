@@ -2,7 +2,6 @@
 
 A multifunctional and simple tool.
 
-!(image.png)
 
 ## Indice
 
