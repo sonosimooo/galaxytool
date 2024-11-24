@@ -87,7 +87,7 @@ def load_settings():
 def main_menu(settings):
     os.system("cls")
     """Main menu logic."""
-    Write.Print(f"| {username} | >> Insert your password to continue: ", Colors.black_to_red)
+    Write.Print(f"|  | >> Insert your password to continue: ", Colors.black_to_red)
     password = input()
     if password == settings["password"]:
 
