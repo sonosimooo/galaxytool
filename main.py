@@ -2,9 +2,12 @@ import subprocess
 import requests
 import os
 import time
-from pystyle import Write, Colors
+from pystyle import Colors, Write
+from tqdm import tqdm
 
 file_path = os.path.join("data", "setted.txt")
+version = "0.1.0"
+max_value = 100
 
 # Funzione per ottenere l'ultimo commit remoto
 def get_remote_commit():
@@ -27,8 +30,10 @@ def get_local_commit():
         return None
 
 # Funzione per fare il pull se ci sono aggiornamenti
-def check_for_updates():
-    Write.Print("Checking Updates...", Colors.black_to_red)
+def check_for_updates(): 
+    Write.Print("\nChecking for updates...", Colors.green)
+    for i in tqdm(range(100), desc="Loading", ascii=True, ncols=75):
+        time.sleep(0.05)
     
     remote_commit = get_remote_commit()
     if remote_commit is None:
@@ -62,13 +67,13 @@ def print_title():
 
 def print_menu():
     Write.Print(r'''
-    ---------- 𝑀𝐸𝒩𝒰 ---------- [ WRITE "U" TO CHECK UPDATES! ]
-          1- YOUTUBE TOOLS
-          2- HACK TOOLS
-          3- FILE TOOLS
+    ---------- 𝑀𝐸𝒩𝒰 ---------- 𝒪𝒯𝐻𝐸𝑅 𝒞𝒪𝑀𝑀𝒜𝒩𝒟𝒮----
+          1- YOUTUBE TOOLS         U - Check updates
+          2- HACK TOOLS            V - Check Version
+          3- FILE TOOLS            E - Exit
           4- DISCORD TOOLS
           5- SETTINGS
-    ----------------------------
+    ----------------------------------------------------
 
 ''', Colors.black_to_red)
 
@@ -119,6 +124,15 @@ def main_menu(settings):
         elif choice == "u":
             check_for_updates()  # Aggiungi il controllo aggiornamenti qui
             main_menu(settings)
+        elif choice == "v":
+            Write.Print(f"| {username} | >> Version: {version}", Colors.black_to_red)
+            time.sleep(1.5)
+            os.system("cls")
+            main_menu(settings)
+        elif choice == "e":
+            Write.Print(f"| {username} | >> Exiting...", Colors.black_to_red)
+            time.sleep(1.5)
+            exit()
         else:
             Write.Print(f"| {username} | >> Invalid choice. Try again!", Colors.red)
             time.sleep(1)
