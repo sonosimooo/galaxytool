@@ -1,26 +1,11 @@
 # GALAXY TOOL
 
-A multifunctional and simple tool.
+![Windows Icon](https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2021.svg)
 
+**Working on:**
+- ![Windows Icon](https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2021.svg) **Windows**
 
-## Indice
+**Version:** 1.0.0
 
-1. [Description](#description)
-2. [Installation](#installazione)
-3. [Use](#uso)
-4. [Licence](#licenza)
-
-## Description
-
-A multifunctional and simple tool.
-
-## Installation
-
-   bash:
-   git clone https://github.com/sonosimooo/galaxytool.git
-
-
-### Prerequisiti
-
-- Python 3.10+
-
+## Required:
+- ![Python Icon](https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg) **Python**
