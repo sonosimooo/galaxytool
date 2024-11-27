@@ -49,10 +49,6 @@ def check_for_updates():
         Write.Print("\nNew Update found! Updating...", Colors.green)
         subprocess.run(['git', 'pull'])
         Write.Print("\nUpdate Completed!", Colors.green)
-        Write.Print("\nRestarting the program...", Colors.green)
-        time.sleep(2.5)
-        os.system("cls")
-        os.system("exit")
         os.system("cls")
         os.system("python main.py")
         
@@ -160,4 +156,3 @@ if __name__ == "__main__":
         Write.Print("| System | >> Settings file not found. Launching setup...", Colors.red)
         os.system("python data/setting/set.py")
     main()
-
